@@ -8,6 +8,35 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Jun 2022 17:08:02 +0800</lastBuildDate><atom:link href="https://fr33rh.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Z WinK</title>
+      <link>https://fr33rh.github.io/basics/z-wink/</link>
+      <pubDate>Wed, 29 Jun 2022 11:25:42 +0800</pubDate>
+      
+      <guid>https://fr33rh.github.io/basics/z-wink/</guid>
+      <description>Z-winK University (ZU) - Bug Bounty Education
+#23 - From $0 to $150,000/mo - Hacking Methodology &amp;amp; Mindset https://www.youtube.com/watch?v=lxEsSlh1ua8
+burp lab VRT </description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://fr33rh.github.io/basics/hugo/</link>
+      <pubDate>Wed, 29 Jun 2022 11:21:38 +0800</pubDate>
+      
+      <guid>https://fr33rh.github.io/basics/hugo/</guid>
+      <description>https://fr33rh.github.io/
+中文文档 https://www.gohugo.org
+config.toml # 网站的配置信息
+https://github.com/olOwOlo/hugo-theme-even
+https://themes.gohugo.io/themes/hugo-book/#installation
+git clone https://github.com/alex-shpak/hugo-book 下载到theme目录 hugo server &amp;ndash;minify &amp;ndash;theme hugo-book
+https://themes.gohugo.io/tags/docs/
+hugo new basics/first-content.md
+lean https://github.com/matcornic/hugo-theme-learn
+文档 https://learn.netlify.app/en/cont/tags/ 案例 https://tshark.dev/</description>
+    </item>
+    
+    <item>
       <title>哈罗First Content</title>
       <link>https://fr33rh.github.io/basics/first-content/</link>
       <pubDate>Mon, 27 Jun 2022 17:08:02 +0800</pubDate>

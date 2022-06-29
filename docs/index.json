@@ -7,6 +7,20 @@
 	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
 },
 {
+	"uri": "https://fr33rh.github.io/basics/z-wink/",
+	"title": "Z WinK",
+	"tags": [],
+	"description": "",
+	"content": "Z-winK University (ZU) - Bug Bounty Education\n#23 - From $0 to $150,000/mo - Hacking Methodology \u0026amp; Mindset https://www.youtube.com/watch?v=lxEsSlh1ua8\nburp lab VRT "
+},
+{
+	"uri": "https://fr33rh.github.io/basics/hugo/",
+	"title": "Hugo",
+	"tags": [],
+	"description": "",
+	"content": "https://fr33rh.github.io/\n中文文档 https://www.gohugo.org\nconfig.toml # 网站的配置信息\nhttps://github.com/olOwOlo/hugo-theme-even\nhttps://themes.gohugo.io/themes/hugo-book/#installation\ngit clone https://github.com/alex-shpak/hugo-book 下载到theme目录 hugo server \u0026ndash;minify \u0026ndash;theme hugo-book\nhttps://themes.gohugo.io/tags/docs/\nhugo new basics/first-content.md\nlean https://github.com/matcornic/hugo-theme-learn\n文档 https://learn.netlify.app/en/cont/tags/ 案例 https://tshark.dev/\n"
+},
+{
 	"uri": "https://fr33rh.github.io/basics/second-content/",
 	"title": "Second Content",
 	"tags": [],
