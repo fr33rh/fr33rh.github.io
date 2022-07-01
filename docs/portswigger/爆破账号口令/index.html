@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Hugo :: My New Hugo Site</title>
+    <title>Lab Username Enumeration via Different Responses :: My New Hugo Site</title>
 
     
     <link href="/css/nucleus.css?1656683520" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/basics/hugo/">
+  <body class="" data-url="/portswigger/%E7%88%86%E7%A0%B4%E8%B4%A6%E5%8F%B7%E5%8F%A3%E4%BB%A4/">
     <nav id="sidebar" class="">
 
 
@@ -170,7 +170,7 @@
   
     
     <li data-nav-id="/basics/" title="Basics" class="dd-item
-        parent
+        
         
         
         ">
@@ -219,7 +219,7 @@
  
   
     
-      <li data-nav-id="/basics/hugo/" title="Hugo" class="dd-item active">
+      <li data-nav-id="/basics/hugo/" title="Hugo" class="dd-item ">
         <a href="/basics/hugo/">
         Hugo
         
@@ -295,7 +295,7 @@
   
     
     <li data-nav-id="/portswigger/" title="PortSwigger" class="dd-item
-        
+        parent
         
         
         ">
@@ -321,7 +321,7 @@
  
   
     
-      <li data-nav-id="/portswigger/%E7%88%86%E7%A0%B4%E8%B4%A6%E5%8F%B7%E5%8F%A3%E4%BB%A4/" title="Lab Username Enumeration via Different Responses" class="dd-item ">
+      <li data-nav-id="/portswigger/%E7%88%86%E7%A0%B4%E8%B4%A6%E5%8F%B7%E5%8F%A3%E4%BB%A4/" title="Lab Username Enumeration via Different Responses" class="dd-item active">
         <a href="/portswigger/%E7%88%86%E7%A0%B4%E8%B4%A6%E5%8F%B7%E5%8F%A3%E4%BB%A4/">
         Lab Username Enumeration via Different Responses
         
@@ -389,7 +389,7 @@
             
           
           
-            <a href='/'>哈罗HOME</a> > <a href='/basics/'>Basics</a> > Hugo
+            <a href='/'>哈罗HOME</a> > <a href='/portswigger/'>PortSwigger</a> > Lab Username Enumeration via Different Responses
           
         
           
@@ -418,26 +418,21 @@
           
             <h1>
               
-              Hugo
+              Lab Username Enumeration via Different Responses
             </h1>
           
 
         
 
 
-<p><a href="https://fr33rh.github.io/">https://fr33rh.github.io/</a></p>
-<p>中文文档 <a href="https://www.gohugo.org">https://www.gohugo.org</a></p>
-<p>config.toml # 网站的配置信息</p>
-<p><a href="https://github.com/olOwOlo/hugo-theme-even">https://github.com/olOwOlo/hugo-theme-even</a></p>
-<p><a href="https://themes.gohugo.io/themes/hugo-book/#installation">https://themes.gohugo.io/themes/hugo-book/#installation</a></p>
-<p>git clone <a href="https://github.com/alex-shpak/hugo-book">https://github.com/alex-shpak/hugo-book</a> 下载到theme目录
-hugo server &ndash;minify &ndash;theme hugo-book</p>
-<p><a href="https://themes.gohugo.io/tags/docs/">https://themes.gohugo.io/tags/docs/</a></p>
-<p>hugo new basics/first-content.md</p>
-<h1 id="lean">lean</h1>
-<p><a href="https://github.com/matcornic/hugo-theme-learn">https://github.com/matcornic/hugo-theme-learn</a></p>
-<p>文档 <a href="https://learn.netlify.app/en/cont/tags/">https://learn.netlify.app/en/cont/tags/</a>
-案例 <a href="https://tshark.dev/">https://tshark.dev/</a></p>
+<p>提供了用户名和密码字典</p>
+<p><a href="https://portswigger.net/web-security/authentication/auth-lab-usernames">https://portswigger.net/web-security/authentication/auth-lab-usernames</a><br>
+<a href="https://portswigger.net/web-security/authentication/auth-lab-passwords">https://portswigger.net/web-security/authentication/auth-lab-passwords</a></p>
+<p>拦截登陆请求，使用Intruder （Sniper attack type )</p>
+<p>先测试username=§aaa§&amp;password=bbb<br>
+使用<code>Simple list</code> payload, 添加用户名字典,然后开始<br>
+发现用户名是app1 (这个请求的返回长度不同)<br>
+最终username=app1&amp;password=moscow</p>
 
 
 <footer class="footline">
@@ -475,22 +470,6 @@ hugo server &ndash;minify &ndash;theme hugo-book</p>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                         
                         
                     
@@ -499,17 +478,15 @@ hugo server &ndash;minify &ndash;theme hugo-book</p>
 
                     
                     
+                        
+                    
                     
 
-                    
-            
-        
                     
                         
             
             
                 
-                    
                     
                 
                 
@@ -527,8 +504,21 @@ hugo server &ndash;minify &ndash;theme hugo-book</p>
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -565,6 +555,7 @@ hugo server &ndash;minify &ndash;theme hugo-book</p>
             
                 
                     
+                    
                 
                 
 
@@ -577,6 +568,7 @@ hugo server &ndash;minify &ndash;theme hugo-book</p>
             
             
                 
+                    
                     
                 
                 
@@ -601,10 +593,10 @@ hugo server &ndash;minify &ndash;theme hugo-book</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/basics/z-wink/" title="Z WinK"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/portswigger/" title="PortSwigger"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/basics/second-content/" title="Second Content" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/basics/" title="Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

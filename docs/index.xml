@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 27 Jun 2022 17:08:02 +0800</lastBuildDate><atom:link href="https://fr33rh.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lab Username Enumeration via Different Responses</title>
-      <link>https://fr33rh.github.io/portswigger/lab-username-enumeration-via-different-responses/</link>
+      <link>https://fr33rh.github.io/portswigger/%E7%88%86%E7%A0%B4%E8%B4%A6%E5%8F%B7%E5%8F%A3%E4%BB%A4/</link>
       <pubDate>Fri, 01 Jul 2022 15:00:00 +0800</pubDate>
       
-      <guid>https://fr33rh.github.io/portswigger/lab-username-enumeration-via-different-responses/</guid>
+      <guid>https://fr33rh.github.io/portswigger/%E7%88%86%E7%A0%B4%E8%B4%A6%E5%8F%B7%E5%8F%A3%E4%BB%A4/</guid>
       <description>提供了用户名和密码字典
 https://portswigger.net/web-security/authentication/auth-lab-usernames
 https://portswigger.net/web-security/authentication/auth-lab-passwords
