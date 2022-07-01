@@ -1,5 +1,5 @@
 ---
-title: "Lab Username Enumeration via Different Responses"
+title: "爆破账号口令"
 date: 2022-07-01T15:00:00+08:00
 ---
 
