@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Basics :: My New Hugo Site</title>
+    <title>Lab Username Enumeration via Different Responses :: My New Hugo Site</title>
 
     
     <link href="/css/nucleus.css?1656664098" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/basics/">
+  <body class="" data-url="/portswigger/lab-username-enumeration-via-different-responses/">
     <nav id="sidebar" class="">
 
 
@@ -171,7 +171,7 @@
     
     <li data-nav-id="/basics/" title="Basics" class="dd-item
         
-        active
+        
         
         ">
       <a href="/basics/">
@@ -295,7 +295,7 @@
   
     
     <li data-nav-id="/portswigger/" title="PortSwigger" class="dd-item
-        
+        parent
         
         
         ">
@@ -321,7 +321,7 @@
  
   
     
-      <li data-nav-id="/portswigger/lab-username-enumeration-via-different-responses/" title="Lab Username Enumeration via Different Responses" class="dd-item ">
+      <li data-nav-id="/portswigger/lab-username-enumeration-via-different-responses/" title="Lab Username Enumeration via Different Responses" class="dd-item active">
         <a href="/portswigger/lab-username-enumeration-via-different-responses/">
         Lab Username Enumeration via Different Responses
         
@@ -373,6 +373,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -383,7 +385,13 @@
             
           
           
-            <a href='/'>哈罗HOME</a> > Basics
+            
+            
+          
+          
+            <a href='/'>哈罗HOME</a> > <a href='/portswigger/'>PortSwigger</a> > Lab Username Enumeration via Different Responses
+          
+        
           
         
           
@@ -392,6 +400,13 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -399,29 +414,31 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Lab Username Enumeration via Different Responses
+            </h1>
           
 
         
 
 
+<p>提供了用户名和密码字典</p>
+<p><a href="https://portswigger.net/web-security/authentication/auth-lab-usernames">https://portswigger.net/web-security/authentication/auth-lab-usernames</a><br>
+<a href="https://portswigger.net/web-security/authentication/auth-lab-passwords">https://portswigger.net/web-security/authentication/auth-lab-passwords</a></p>
+<p>拦截登陆请求，使用Intruder （Sniper attack type )</p>
+<p>先测试username=§aaa§&amp;password=bbb<br>
+使用<code>Simple list</code> payload, 添加用户名字典,然后开始<br>
+发现用户名是app1 (这个请求的返回长度不同)<br>
+最终username=app1&amp;password=moscow</p>
 
-	<h3 id="chapter-x">Chapter X</h3>
-<h1 id="some-chapter-title">Some Chapter title</h1>
-<p>Lorem Ipsum.</p>
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -453,6 +470,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -468,9 +487,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -539,6 +555,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -551,6 +568,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -575,10 +593,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/" title="哈罗HOME"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/portswigger/" title="PortSwigger"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/basics/z-wink/" title="Z WinK" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/basics/" title="Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -610,3 +628,4 @@
 
   </body>
 </html>
+

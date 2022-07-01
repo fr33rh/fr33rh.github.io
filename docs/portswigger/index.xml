@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PortSwigger on My New Hugo Site</title>
+    <link>https://fr33rh.github.io/portswigger/</link>
+    <description>Recent content in PortSwigger on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 14:28:30 +0800</lastBuildDate><atom:link href="https://fr33rh.github.io/portswigger/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lab Username Enumeration via Different Responses</title>
+      <link>https://fr33rh.github.io/portswigger/lab-username-enumeration-via-different-responses/</link>
+      <pubDate>Fri, 01 Jul 2022 15:00:00 +0800</pubDate>
+      
+      <guid>https://fr33rh.github.io/portswigger/lab-username-enumeration-via-different-responses/</guid>
+      <description>提供了用户名和密码字典
+https://portswigger.net/web-security/authentication/auth-lab-usernames
+https://portswigger.net/web-security/authentication/auth-lab-passwords
+拦截登陆请求，使用Intruder （Sniper attack type )
+先测试username=§aaa§&amp;amp;password=bbb
+使用Simple list payload, 添加用户名字典,然后开始
+发现用户名是app1 (这个请求的返回长度不同)
+最终username=app1&amp;amp;password=moscow</description>
+    </item>
+    
+  </channel>
+</rss>

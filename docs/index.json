@@ -7,6 +7,20 @@
 	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
 },
 {
+	"uri": "https://fr33rh.github.io/portswigger/lab-username-enumeration-via-different-responses/",
+	"title": "Lab Username Enumeration via Different Responses",
+	"tags": [],
+	"description": "",
+	"content": "提供了用户名和密码字典\nhttps://portswigger.net/web-security/authentication/auth-lab-usernames\nhttps://portswigger.net/web-security/authentication/auth-lab-passwords\n拦截登陆请求，使用Intruder （Sniper attack type )\n先测试username=§aaa§\u0026amp;password=bbb\n使用Simple list payload, 添加用户名字典,然后开始\n发现用户名是app1 (这个请求的返回长度不同)\n最终username=app1\u0026amp;password=moscow\n"
+},
+{
+	"uri": "https://fr33rh.github.io/portswigger/",
+	"title": "PortSwigger",
+	"tags": [],
+	"description": "",
+	"content": "Academy https://portswigger.net/web-security/dashboard\nResearch https://portswigger.net/research 一些分享\n学习路线https://portswigger.net/web-security/learning-path#learning-path 计划先学习\n2 Authentication （14labs） https://portswigger.net/web-security/authentication 7 Access control (13labs) https://portswigger.net/web-security/access-control 然后再学习一些高级主题 https://portswigger.net/web-security/learning-path#advanced-topics\n"
+},
+{
 	"uri": "https://fr33rh.github.io/basics/z-wink/",
 	"title": "Z WinK",
 	"tags": [],
