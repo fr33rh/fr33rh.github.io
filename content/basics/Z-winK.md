@@ -5,7 +5,8 @@ date: 2022-06-29T11:25:42+08:00
 
 Z-winK University (ZU) - Bug Bounty Education
 
-点击视频下方“CC”,自动生成英文字幕.字幕位置可以随意拖动.
+点击视频下方“CC”,自动生成英文字幕.字幕位置可以随意拖动.  
+笔记本比pad更适合看视频学习，方便随时记录学习。
 
 # Interview
 
@@ -58,9 +59,13 @@ https://portswigger.net/web-security
 ## #23 - From $0 to $150,000/mo - Hacking Methodology & Mindset
 
 https://www.youtube.com/watch?v=lxEsSlh1ua8
-
- - burp lab
- - VRT
+- 不要急
+- 工作环境：整洁，远离手机
+- 合适的操作系统
+- 称手的工具
+- lab   https://portswigger.net/
+- VRT   https://bugcrowd.com/vulnerability-rating-taxonomy
+- https://tryhackme.com/
 
 
 
