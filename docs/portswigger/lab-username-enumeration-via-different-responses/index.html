@@ -12,20 +12,20 @@
     <title>爆破账号口令 :: My New Hugo Site</title>
 
     
-    <link href="/css/nucleus.css?1656736809" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1656736809" rel="stylesheet">
-    <link href="/css/hybrid.css?1656736809" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1656736809" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1656736809" rel="stylesheet">
-    <link href="/css/auto-complete.css?1656736809" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1656736809" rel="stylesheet">
-    <link href="/css/theme.css?1656736809" rel="stylesheet">
-    <link href="/css/tabs.css?1656736809" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1656736809" rel="stylesheet">
+    <link href="/css/nucleus.css?1656751959" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656751959" rel="stylesheet">
+    <link href="/css/hybrid.css?1656751959" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656751959" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656751959" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656751959" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656751959" rel="stylesheet">
+    <link href="/css/theme.css?1656751959" rel="stylesheet">
+    <link href="/css/tabs.css?1656751959" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656751959" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1656736809"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656751959"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -135,14 +135,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1656736809"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1656736809"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656751959"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656751959"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fr33rh.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1656736809"></script>
+<script type="text/javascript" src="/js/search.js?1656751959"></script>
 
     
   </div>
@@ -321,6 +321,27 @@
  
   
     
+      <li data-nav-id="/portswigger/lab-multi-factor/" title="Lab Multi Factor" class="dd-item ">
+        <a href="/portswigger/lab-multi-factor/">
+        Lab Multi Factor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/portswigger/lab-username-enumeration-via-different-responses/" title="爆破账号口令" class="dd-item active">
         <a href="/portswigger/lab-username-enumeration-via-different-responses/">
         爆破账号口令
@@ -478,10 +499,13 @@ When the attack finishes, filter the results to hide responses with a 200 status
 <p>Select the attack type Cluster bomb. Add a payload position to the username parameter. Add a blank payload position to the end of the request body by clicking Add § twice. The result should look something like this:</p>
 <pre tabindex="0"><code>username=§invalid-username§&amp;password=example§§
 </code></pre><p>On the Payloads tab, add the list of usernames to the first payload set. For the second set, select the Null payloads type and choose the option to generate 5 payloads. This will effectively cause each username to be repeated 5 times. Start the attack.<br>
-问题：这5次请求是有间隔的（先遍历set1中100个用户名，再遍历set2 ，要等一个循环），可能因为间隔时间较长而不会被封号，如何连续发送5次呢??
+问题1：这5次请求是有间隔的（先遍历set1中100个用户名，再遍历set2 ，要等一个循环），可能因为间隔时间较长而不会被封号，如何连续发送5次呢??
 解决：交换Payload set 1和2的位置(burp按先后顺序编号,这里set 1 为5个空的payload)</p>
 <pre tabindex="0"><code>password=bbbbbbbbb§§&amp;username=§aaaa§
-</code></pre><h1 id="lab-broken-brute-force-protection-multiple-credentials-per-request">Lab: Broken brute-force protection, multiple credentials per request</h1>
+</code></pre><p>如果遇到参数的顺序不能调整怎们办呢？burp能够设置吗？？</p>
+<p>问题2：等一分钟咋办,靠概率吗？You have made too many incorrect login attempts. Please try again in 1 minute(s).</p>
+<p>最终password=159753&amp;username=agenda</p>
+<h1 id="lab-broken-brute-force-protection-multiple-credentials-per-request">Lab: Broken brute-force protection, multiple credentials per request</h1>
 <p>In Burp Repeater, replace the single string value of the password with an array of strings containing all of the candidate passwords. For example:
 &ldquo;username&rdquo; : &ldquo;carlos&rdquo;,
 &ldquo;password&rdquo; : [
@@ -633,6 +657,25 @@ Content-Length: 0
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -657,10 +700,10 @@ Content-Length: 0
 	 
 	 
 		
-			<a class="nav nav-prev" href="/portswigger/" title="PortSwigger"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/portswigger/lab-multi-factor/" title="Lab Multi Factor"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/basics/" title="Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/portswigger/lab-multi-factor/" title="Lab Multi Factor" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -670,19 +713,19 @@ Content-Length: 0
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1656736809"></script>
-    <script src="/js/perfect-scrollbar.min.js?1656736809"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1656736809"></script>
-    <script src="/js/jquery.sticky.js?1656736809"></script>
-    <script src="/js/featherlight.min.js?1656736809"></script>
-    <script src="/js/highlight.pack.js?1656736809"></script>
+    <script src="/js/clipboard.min.js?1656751959"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656751959"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656751959"></script>
+    <script src="/js/jquery.sticky.js?1656751959"></script>
+    <script src="/js/featherlight.min.js?1656751959"></script>
+    <script src="/js/highlight.pack.js?1656751959"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1656736809"></script>
-    <script src="/js/learn.js?1656736809"></script>
-    <script src="/js/hugo-learn.js?1656736809"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656751959"></script>
+    <script src="/js/learn.js?1656751959"></script>
+    <script src="/js/hugo-learn.js?1656751959"></script>
     
         
-            <script src="/mermaid/mermaid.js?1656736809"></script>
+            <script src="/mermaid/mermaid.js?1656751959"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Z WinK :: My New Hugo Site</title>
+    <title>Lab Multi Factor :: My New Hugo Site</title>
 
     
     <link href="/css/nucleus.css?1656751959" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/basics/z-wink/">
+  <body class="" data-url="/portswigger/lab-multi-factor/">
     <nav id="sidebar" class="">
 
 
@@ -170,7 +170,7 @@
   
     
     <li data-nav-id="/basics/" title="Basics" class="dd-item
-        parent
+        
         
         
         ">
@@ -198,7 +198,7 @@
  
   
     
-      <li data-nav-id="/basics/z-wink/" title="Z WinK" class="dd-item active">
+      <li data-nav-id="/basics/z-wink/" title="Z WinK" class="dd-item ">
         <a href="/basics/z-wink/">
         Z WinK
         
@@ -295,7 +295,7 @@
   
     
     <li data-nav-id="/portswigger/" title="PortSwigger" class="dd-item
-        
+        parent
         
         
         ">
@@ -321,7 +321,7 @@
  
   
     
-      <li data-nav-id="/portswigger/lab-multi-factor/" title="Lab Multi Factor" class="dd-item ">
+      <li data-nav-id="/portswigger/lab-multi-factor/" title="Lab Multi Factor" class="dd-item active">
         <a href="/portswigger/lab-multi-factor/">
         Lab Multi Factor
         
@@ -410,7 +410,7 @@
             
           
           
-            <a href='/'>哈罗HOME</a> > <a href='/basics/'>Basics</a> > Z WinK
+            <a href='/'>哈罗HOME</a> > <a href='/portswigger/'>PortSwigger</a> > Lab Multi Factor
           
         
           
@@ -423,21 +423,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-the-positives-of-bug-bounty-hunting">#1: The Positives of Bug Bounty Hunting</a></li>
-    <li><a href="#2-picking-a-bug-bounty-program">#2: Picking a Bug Bounty Program</a></li>
-    <li><a href="#3-you-dont-make-money-for-bugs-you-dont-log">#3: You Don&rsquo;t Make Money for Bugs You Don&rsquo;t Log</a></li>
-    <li><a href="#4-question-and-answer-session-1">#4: Question and Answer Session #1</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#20---rapidly-testing-apis-for-broken-access-control">#20 - Rapidly Testing APIs for Broken Access Control</a></li>
-    <li><a href="#21---hacking-pinterest-for-two-weeks">#21 - Hacking Pinterest for Two Weeks</a></li>
-    <li><a href="#22---testing-file-upload-dialogues">#22 - Testing File Upload Dialogues</a></li>
-    <li><a href="#23---from-0-to-150000mo---hacking-methodology--mindset">#23 - From $0 to $150,000/mo - Hacking Methodology &amp; Mindset</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -453,56 +439,45 @@
           
             <h1>
               
-              Z WinK
+              Lab Multi Factor
             </h1>
           
 
         
 
 
-<p>Z-winK University (ZU) - Bug Bounty Education</p>
-<p>点击视频下方“CC”,自动生成英文字幕.字幕位置可以随意拖动.<br>
-笔记本比pad更适合看视频学习，方便随时记录学习。</p>
-<h1 id="interview">Interview</h1>
-<h2 id="1-the-positives-of-bug-bounty-hunting">#1: The Positives of Bug Bounty Hunting</h2>
-<p><a href="https://www.youtube.com/watch?v=n43iHITo3r4&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e">https://www.youtube.com/watch?v=n43iHITo3r4&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e</a></p>
-<h2 id="2-picking-a-bug-bounty-program">#2: Picking a Bug Bounty Program</h2>
-<p><a href="https://www.youtube.com/watch?v=gWCnLPwP1T8&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e">https://www.youtube.com/watch?v=gWCnLPwP1T8&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e</a></p>
-<h2 id="3-you-dont-make-money-for-bugs-you-dont-log">#3: You Don&rsquo;t Make Money for Bugs You Don&rsquo;t Log</h2>
-<p><a href="https://www.youtube.com/watch?v=Llvhr-T6x68&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e">https://www.youtube.com/watch?v=Llvhr-T6x68&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e</a></p>
-<p>别担心，多提交报告（小问题/不能完整利用的RCE&hellip;)</p>
-<h2 id="4-question-and-answer-session-1">#4: Question and Answer Session #1</h2>
-<p><a href="https://www.youtube.com/watch?v=mT__RAQLoRw&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e">https://www.youtube.com/watch?v=mT__RAQLoRw&amp;list=PLr-hXv9DE5yhSFSopZ614DswKLm-cBT2e</a></p>
+<h1 id="lab-2fa-simple-bypass">Lab: 2FA simple bypass</h1>
 <ul>
-<li>学历不重要，挖洞靠的是practice,experience,understanding vulnerabilities</li>
-<li>分享经历：最初在bugcowd提交一些洞，活动积分，然后受邀一些私有项目,获得了更多的机会.</li>
-<li>作为全职web application pentester,主业是防御；副业bug hunter，可以保持技术领先，促进主业。</li>
-<li>learn by doing</li>
-<li>Twitter follow 牛人</li>
-<li>每天进步一点，挑战自己，制定合适的目标，不和别人比较</li>
-<li>不用面面俱到，有些漏洞（eg复杂的注入）留给别人吧。优先broken access control,authentication,idor</li>
+<li>Your credentials: wiener:peter</li>
+<li>Victim&rsquo;s credentials carlos:montoya</li>
 </ul>
-<h1 id="bug-bounty-101">Bug Bounty 101</h1>
-<p><a href="https://www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ">https://www.youtube.com/channel/UCDl4jpAVAezUdzsDBDDTGsQ</a></p>
-<h2 id="20---rapidly-testing-apis-for-broken-access-control">#20 - Rapidly Testing APIs for Broken Access Control</h2>
-<p><a href="https://www.youtube.com/watch?v=qvbNVRqbYLE">https://www.youtube.com/watch?v=qvbNVRqbYLE</a></p>
-<h2 id="21---hacking-pinterest-for-two-weeks">#21 - Hacking Pinterest for Two Weeks</h2>
-<p><a href="https://www.youtube.com/watch?v=HnCPyNbh8mQ">https://www.youtube.com/watch?v=HnCPyNbh8mQ</a></p>
-<h2 id="22---testing-file-upload-dialogues">#22 - Testing File Upload Dialogues</h2>
-<p><a href="https://www.youtube.com/watch?v=J5aPch4XVIM">https://www.youtube.com/watch?v=J5aPch4XVIM</a></p>
-<p><a href="https://duckduckgo.com/">https://duckduckgo.com/</a>  隐私搜索</p>
-<p><a href="https://portswigger.net/web-security">https://portswigger.net/web-security</a></p>
-<h2 id="23---from-0-to-150000mo---hacking-methodology--mindset">#23 - From $0 to $150,000/mo - Hacking Methodology &amp; Mindset</h2>
-<p><a href="https://www.youtube.com/watch?v=lxEsSlh1ua8">https://www.youtube.com/watch?v=lxEsSlh1ua8</a></p>
+<p>利用wiener:peter登陆后，页面正上方有个&quot;Email client&quot;,里面有验证码，输入后登陆成功,跳转到<br>
+<a href="https://0ac500ba04fc6a72c02403f600fb0025.web-security-academy.net/my-account">https://0ac500ba04fc6a72c02403f600fb0025.web-security-academy.net/my-account</a><br>
+使用carlos:montoya登陆后，直接修改url即可绕过认证</p>
+<h1 id="lab-2fa-broken-logic">Lab: 2FA broken logic</h1>
 <ul>
-<li>不要急</li>
-<li>工作环境：整洁，远离手机</li>
-<li>合适的操作系统</li>
-<li>称手的工具</li>
-<li>lab   <a href="https://portswigger.net/">https://portswigger.net/</a></li>
-<li>VRT   <a href="https://bugcrowd.com/vulnerability-rating-taxonomy">https://bugcrowd.com/vulnerability-rating-taxonomy</a></li>
-<li><a href="https://tryhackme.com/">https://tryhackme.com/</a></li>
+<li>Your credentials: wiener:peter</li>
+<li>Victim&rsquo;s username: carlos</li>
 </ul>
+<p>梳理下登陆逻辑，有三步</p>
+<ul>
+<li>POST /login 提交账号口令,服务器返回session</li>
+<li>GET /login2 通知服务器发送mfa-code(只有4位数字)</li>
+</ul>
+<pre tabindex="0"><code>GET /login2 HTTP/1.1
+Host: 0a81002203a78683c00d231f001800d0.web-security-academy.net
+Cookie: verify=wiener; session=cjiAPG6MGGP0YWYDe3A3qeeyolMc5pmY
+</code></pre><ul>
+<li>POST /login2 验证mfa-code</li>
+</ul>
+<p>第二步把verify=wiener替换为carlos，发现wiener没有收到mfa-code了，推测carlos收到了
+第三步也把wiener替换为carlos，爆破mfa-code
+(社区版burp爆破速度特别慢？？？试试Turbo Intruder呢？？)</p>
+<h1 id="lab-2fa-bypass-using-a-brute-force-attack">Lab: 2FA bypass using a brute-force attack</h1>
+<p>This lab&rsquo;s two-factor authentication is vulnerable to brute-forcing. You have already obtained a valid username and password, but do not have access to the user&rsquo;s 2FA verification code. To solve the lab, brute-force the 2FA code and access Carlos&rsquo;s account page.</p>
+<p>Victim&rsquo;s credentials: carlos:montoya</p>
+<p>You will need to use Burp macros in conjunction with Burp Intruder to solve this lab. For more information about macros, please refer to the Burp Suite documentation. Users proficient in Python might prefer to use the Turbo Intruder extension, which is available from the BApp store.</p>
+<p>需要使用Macro自动宏或者Turbo Intruder插件(短时间发送大量请求)</p>
 
 
 <footer class="footline">
@@ -540,6 +515,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -555,26 +532,6 @@
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -619,22 +576,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -651,10 +592,47 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -679,10 +657,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/basics/" title="Basics"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/portswigger/" title="PortSwigger"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/basics/hugo/" title="Hugo" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/portswigger/lab-username-enumeration-via-different-responses/" title="爆破账号口令" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -80,11 +80,16 @@ Select the attack type Cluster bomb. Add a payload position to the username para
 username=§invalid-username§&password=example§§
 ```
 On the Payloads tab, add the list of usernames to the first payload set. For the second set, select the Null payloads type and choose the option to generate 5 payloads. This will effectively cause each username to be repeated 5 times. Start the attack.   
-问题：这5次请求是有间隔的（先遍历set1中100个用户名，再遍历set2 ，要等一个循环），可能因为间隔时间较长而不会被封号，如何连续发送5次呢??
+问题1：这5次请求是有间隔的（先遍历set1中100个用户名，再遍历set2 ，要等一个循环），可能因为间隔时间较长而不会被封号，如何连续发送5次呢??
 解决：交换Payload set 1和2的位置(burp按先后顺序编号,这里set 1 为5个空的payload)
 ```
 password=bbbbbbbbb§§&username=§aaaa§
 ```
+如果遇到参数的顺序不能调整怎们办呢？burp能够设置吗？？
+
+问题2：等一分钟咋办,靠概率吗？You have made too many incorrect login attempts. Please try again in 1 minute(s).
+
+最终password=159753&username=agenda
 
 # Lab: Broken brute-force protection, multiple credentials per request
 
