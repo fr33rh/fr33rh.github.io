@@ -12,20 +12,20 @@
     <title>爆破账号口令 :: My New Hugo Site</title>
 
     
-    <link href="/css/nucleus.css?1656684510" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1656684510" rel="stylesheet">
-    <link href="/css/hybrid.css?1656684510" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1656684510" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1656684510" rel="stylesheet">
-    <link href="/css/auto-complete.css?1656684510" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1656684510" rel="stylesheet">
-    <link href="/css/theme.css?1656684510" rel="stylesheet">
-    <link href="/css/tabs.css?1656684510" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1656684510" rel="stylesheet">
+    <link href="/css/nucleus.css?1656736800" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656736800" rel="stylesheet">
+    <link href="/css/hybrid.css?1656736800" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656736800" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656736800" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656736800" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656736800" rel="stylesheet">
+    <link href="/css/theme.css?1656736800" rel="stylesheet">
+    <link href="/css/tabs.css?1656736800" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656736800" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1656684510"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656736800"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -135,14 +135,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1656684510"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1656684510"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656736800"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656736800"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fr33rh.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1656684510"></script>
+<script type="text/javascript" src="/js/search.js?1656736800"></script>
 
     
   </div>
@@ -425,14 +425,78 @@
         
 
 
-<p>提供了用户名和密码字典</p>
-<p><a href="https://portswigger.net/web-security/authentication/auth-lab-usernames">https://portswigger.net/web-security/authentication/auth-lab-usernames</a><br>
-<a href="https://portswigger.net/web-security/authentication/auth-lab-passwords">https://portswigger.net/web-security/authentication/auth-lab-passwords</a></p>
-<p>拦截登陆请求，使用Intruder （Sniper attack type )</p>
-<p>先测试username=§aaa§&amp;password=bbb<br>
+<p><a href="https://portswigger.net/web-security/authentication/password-based">https://portswigger.net/web-security/authentication/password-based</a></p>
+<h1 id="lab-username-enumeration-via-different-responses">Lab: Username enumeration via different responses</h1>
+<p>This lab is vulnerable to username enumeration and password brute-force attacks.
+提供了用户名和密码字典
+<a href="https://portswigger.net/web-security/authentication/auth-lab-usernames">https://portswigger.net/web-security/authentication/auth-lab-usernames</a><br>
+<a href="https://portswigger.net/web-security/authentication/auth-lab-passwords">https://portswigger.net/web-security/authentication/auth-lab-passwords</a><br>
+To solve the lab, enumerate a valid username, brute-force this user&rsquo;s password, then access their account page.</p>
+<p>随便输入账号口令，提示Invalid username</p>
+<p>拦截登陆请求，使用Intruder （Sniper attack type )
+先测试username=§aaa§&amp;password=bbb<br>
 使用<code>Simple list</code> payload, 添加用户名字典,然后开始<br>
 发现用户名是app1 (这个请求的返回长度不同)<br>
 最终username=app1&amp;password=moscow</p>
+<h1 id="lab-username-enumeration-via-subtly-different-responses">Lab: Username enumeration via subtly different responses</h1>
+<p>随便输入账号口令，提示Invalid username or password.</p>
+<p>使用Intruder，观察response的长度，没有收获
+On the Options tab, under Grep - Extract, click Add. In the dialog that appears, scroll down through the response until you find the error message Invalid username or password.. Use the mouse to highlight the text content of the message. The other settings will be automatically adjusted. Click OK and then start the attack.
+结果发现有个请求的返回结果有细微差异，提示Invalid username or password少了一个句号
+最终username=as&amp;password=aaaaaa</p>
+<h1 id="lab-username-enumeration-via-response-timing">Lab: Username enumeration via response timing</h1>
+<p>This lab is vulnerable to username enumeration using its response times.
+给了一个有效账号Your credentials: wiener:peter</p>
+<p>添加header绕过IP防护</p>
+<pre tabindex="0"><code>X-Forwarded-For: 127.0.0.1
+</code></pre><p>Continue experimenting with usernames and passwords. Pay particular attention to the response times. Notice that when the username is invalid, the response time is roughly the same. However, when you enter a valid username (your own), the response time is increased depending on the length of the password you entered.<br>
+使用 Intruder 的Pitchfork模式，因为需要同时使用IP和Username两个字典.<br>
+On the Payloads tab, select payload set 1. Select the Numbers payload type. Enter the range 1 - 100 and set the step to 1. Set the max fraction digits to 0.<br>
+Select payload set 2 and add the list of usernames.Start the attack.<br>
+When the attack finishes, at the top of the dialog, click Columns and select the Response received and Response completed options. These two columns are now displayed in the results table. <br>
+最终username=anaheim&amp;password=tigger</p>
+<h1 id="lab-broken-brute-force-protection-ip-block">Lab: Broken brute-force protection, IP block</h1>
+<p>In some implementations, the counter for the number of failed attempts resets if the IP owner logs in successfully. This means an attacker would simply have to log in to their own account every few attempts to prevent this limit from ever being reached.</p>
+<pre tabindex="0"><code>Your credentials: wiener:peter   
+Victim&#39;s username: carlos   
+</code></pre><p>Advanced users may want to solve this lab by using a macro or the Turbo Intruder extension. However, it is possible to solve the lab without using these advanced features.</p>
+<p>设置一次只发送一个请求On the Resource pool tab, add the attack to a resource pool with Maximum concurrent requests set to 1.<br>
+生成字典</p>
+<pre tabindex="0"><code>#!/bin/bash
+for p in `cat password.txt`
+do
+	echo wiener &gt;&gt; list1.txt
+	echo carlos &gt;&gt; list1.txt
+
+	echo peter &gt;&gt; list2.txt
+	echo $p &gt;&gt; list2.txt
+done
+</code></pre><p>使用pitchfork attack,添加list1和list2
+When the attack finishes, filter the results to hide responses with a 200 status code.
+最终username=carlos&amp;password=1234567</p>
+<h1 id="lab-username-enumeration-via-account-lock">Lab: Username enumeration via account lock</h1>
+<p>Select the attack type Cluster bomb. Add a payload position to the username parameter. Add a blank payload position to the end of the request body by clicking Add § twice. The result should look something like this:</p>
+<pre tabindex="0"><code>username=§invalid-username§&amp;password=example§§
+</code></pre><p>On the Payloads tab, add the list of usernames to the first payload set. For the second set, select the Null payloads type and choose the option to generate 5 payloads. This will effectively cause each username to be repeated 5 times. Start the attack.<br>
+问题：这5次请求是有间隔的（先遍历set1中100个用户名，再遍历set2 ，要等一个循环），可能因为间隔时间较长而不会被封号，如何连续发送5次呢??
+解决：交换Payload set 1和2的位置(burp按先后顺序编号,这里set 1 为5个空的payload)</p>
+<pre tabindex="0"><code>password=bbbbbbbbb§§&amp;username=§aaaa§
+</code></pre><h1 id="lab-broken-brute-force-protection-multiple-credentials-per-request">Lab: Broken brute-force protection, multiple credentials per request</h1>
+<p>In Burp Repeater, replace the single string value of the password with an array of strings containing all of the candidate passwords. For example:
+&ldquo;username&rdquo; : &ldquo;carlos&rdquo;,
+&ldquo;password&rdquo; : [
+&ldquo;123456&rdquo;,
+&ldquo;password&rdquo;,
+&ldquo;qwerty&rdquo;
+&hellip;
+]
+成功登陆后获得302跳转和一个cookie</p>
+<pre tabindex="0"><code>HTTP/1.1 302 Found
+Location: /my-account
+Set-Cookie: session=yvO5MJy7Wj1PUDnmp6AvIB8ZzWcskRtS; Secure; HttpOnly; SameSite=None
+Connection: close
+Content-Length: 0
+</code></pre><p>Right-click on this request and select Show response in browser.</p>
 
 
 <footer class="footline">
@@ -606,19 +670,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1656684510"></script>
-    <script src="/js/perfect-scrollbar.min.js?1656684510"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1656684510"></script>
-    <script src="/js/jquery.sticky.js?1656684510"></script>
-    <script src="/js/featherlight.min.js?1656684510"></script>
-    <script src="/js/highlight.pack.js?1656684510"></script>
+    <script src="/js/clipboard.min.js?1656736800"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656736800"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656736800"></script>
+    <script src="/js/jquery.sticky.js?1656736800"></script>
+    <script src="/js/featherlight.min.js?1656736800"></script>
+    <script src="/js/highlight.pack.js?1656736800"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1656684510"></script>
-    <script src="/js/learn.js?1656684510"></script>
-    <script src="/js/hugo-learn.js?1656684510"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656736800"></script>
+    <script src="/js/learn.js?1656736800"></script>
+    <script src="/js/hugo-learn.js?1656736800"></script>
     
         
-            <script src="/mermaid/mermaid.js?1656684510"></script>
+            <script src="/mermaid/mermaid.js?1656736800"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
