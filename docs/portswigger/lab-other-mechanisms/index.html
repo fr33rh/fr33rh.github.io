@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>哈罗HOME :: My New Hugo Site</title>
+    <title>Lab Other Mechanisms :: My New Hugo Site</title>
 
     
     <link href="/css/nucleus.css?1656907319" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/portswigger/lab-other-mechanisms/">
     <nav id="sidebar" class="">
 
 
@@ -295,7 +295,7 @@
   
     
     <li data-nav-id="/portswigger/" title="PortSwigger" class="dd-item
-        
+        parent
         
         
         ">
@@ -321,7 +321,7 @@
  
   
     
-      <li data-nav-id="/portswigger/lab-other-mechanisms/" title="Lab Other Mechanisms" class="dd-item ">
+      <li data-nav-id="/portswigger/lab-other-mechanisms/" title="Lab Other Mechanisms" class="dd-item active">
         <a href="/portswigger/lab-other-mechanisms/">
         Lab Other Mechanisms
         
@@ -404,26 +404,92 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>哈罗HOME</a> > <a href='/portswigger/'>PortSwigger</a> > Lab Other Mechanisms
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#lab-brute-forcing-a-stay-logged-in-cookie">Lab: Brute-forcing a stay-logged-in cookie</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Lab Other Mechanisms
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="稳定本身就是最大的不稳定不断学习保持竞争力才是稳定">稳定本身就是最大的不稳定,不断学习，保持竞争力，才是稳定！</h2>
-<h2 id="善用工具eggit点滴积累">善用工具（eg：git），点滴积累</h2>
-<h2 id="选择大于努力选择后就要坚持不要一直选择">选择大于努力，选择后就要坚持，不要一直选择</h2>
-<h2 id="承认自己的不足脚踏实地的学习不懂装懂才丢脸">承认自己的不足，脚踏实地的学习，不懂装懂才丢脸</h2>
+<h2 id="lab-brute-forcing-a-stay-logged-in-cookie">Lab: Brute-forcing a stay-logged-in cookie</h2>
+<p>Your credentials: wiener:peter<br>
+Victim&rsquo;s username: carlos<br>
+Cookie: stay-logged-in=d2llbmVyOjUxZGMzMGRkYzQ3M2Q0M2E2MDExZTllYmJhNmNhNzcw;<br>
+Inspecter自动用base64解开 wiener:51dc30ddc473d43a6011e9ebba6ca770<br>
+其中md5(&lsquo;peter&rsquo;)=51dc30ddc473d43a6011e9ebba6ca770</p>
+<p>爆破cookie<br>
+Under Payload processing, add the following rules in order. These rules will be applied sequentially to each payload before the request is submitted.</p>
+<pre><code>Hash: MD5
+Add prefix: carlos:
+Encode: Base64-encode
+</code></pre>
+<p>As the Update email button is only displayed when you access the /my-account page in an authenticated state, we can use the presence or absence of this button to determine whether we&rsquo;ve successfully brute-forced the cookie. On the Options tab, add a grep match rule to flag any responses containing the string Update email. Start the attack.</p>
+
+
+<footer class="footline">
 	
-  
+</footer>
+
         
         </div>
         
@@ -540,6 +606,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -552,6 +619,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -568,6 +636,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -608,8 +679,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/portswigger/" title="PortSwigger"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/basics/" title="Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/portswigger/lab-multi-factor/" title="Lab Multi Factor" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

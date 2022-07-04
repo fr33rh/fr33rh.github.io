@@ -7,6 +7,13 @@
 	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
 },
 {
+	"uri": "https://fr33rh.github.io/portswigger/lab-other-mechanisms/",
+	"title": "Lab Other Mechanisms",
+	"tags": [],
+	"description": "",
+	"content": "Lab: Brute-forcing a stay-logged-in cookie Your credentials: wiener:peter\nVictim\u0026rsquo;s username: carlos\nCookie: stay-logged-in=d2llbmVyOjUxZGMzMGRkYzQ3M2Q0M2E2MDExZTllYmJhNmNhNzcw;\nInspecter自动用base64解开 wiener:51dc30ddc473d43a6011e9ebba6ca770\n其中md5(\u0026lsquo;peter\u0026rsquo;)=51dc30ddc473d43a6011e9ebba6ca770\n爆破cookie\nUnder Payload processing, add the following rules in order. These rules will be applied sequentially to each payload before the request is submitted.\nHash: MD5 Add prefix: carlos: Encode: Base64-encode As the Update email button is only displayed when you access the /my-account page in an authenticated state, we can use the presence or absence of this button to determine whether we\u0026rsquo;ve successfully brute-forced the cookie. On the Options tab, add a grep match rule to flag any responses containing the string Update email. Start the attack.\n"
+},
+{
 	"uri": "https://fr33rh.github.io/portswigger/lab-multi-factor/",
 	"title": "Lab Multi Factor",
 	"tags": [],
