@@ -7,6 +7,13 @@
 	"content": "Chapter X Some Chapter title Lorem Ipsum.\n"
 },
 {
+	"uri": "https://fr33rh.github.io/portswigger/lab-access-control/",
+	"title": "Lab Access Control",
+	"tags": [],
+	"description": "",
+	"content": "https://portswigger.net/web-security/access-control\nLab: Unprotected admin functionality https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality\nThis lab has an unprotected admin panel.\n访问/robots.txt发现Disallow: /administrator-panel\n"
+},
+{
 	"uri": "https://fr33rh.github.io/portswigger/lab-other-mechanisms/",
 	"title": "Lab Other Mechanisms",
 	"tags": [],
